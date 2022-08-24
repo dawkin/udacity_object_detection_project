@@ -65,11 +65,62 @@ The training was perform with the folowing parameter:
   
   
 #### Image example
-TODO: Add example of data augmentation
+![alt text](./images/data_augmentation_bis.PNG "example of augmented image") 
 
 #### Graphs
+As the learning remained unchanged, the learning rate won't be displayed here.
 
-TODO: Add Data Augmentation loss
+![alt text](./images/Exp_one_loss.PNG "Losses chart of the experience n°1") 
 
-### Learning Rate
+First the overall loss has significantly decreased compare to the initial experiment which proves that the data augmentation is effective and improving the object detection. The regularization loss has also the same shape than the reference. Another improvement is the stagnation of the classification loss which here seems to constantly decrease over the training. Which makes me think over increasing the number of steps or increase the learning rate. The same situation happen on the localisation loss.
 
+The regularization loss show us that we still don't have any overfit with our model.
+
+#### Conclusion 
+
+Augmenting the volume and variety of data has greatly improve the training of our model by reducing the loss. Therefore it is still possible to improve the performances of the model. Two leads are the number of steps and the learning rate.
+
+### Learning Rate Fine Tunning
+As state in the following article the cosine decay rate is already a great learning rate for the object detection [Article](https://neptune.ai/blog/tensorflow-object-detection-api-best-practices-to-training-evaluation-deployment). So Instead of providing a new learning rate, the experiment will be with the same learning rate but with a different set of parameters.
+
+**Initial experiment:**
+```
+ learning_rate {
+        cosine_decay_learning_rate {
+          learning_rate_base: 0.04
+          total_steps: 2500
+          warmup_learning_rate: 0.013333
+          warmup_steps: 200
+        }
+```
+
+**Experiment on learning rate:**
+```
+ learning_rate {
+        cosine_decay_learning_rate {
+          learning_rate_base: 0.05
+          total_steps: 2500
+          warmup_learning_rate: 0.01
+          warmup_steps: 300
+        }
+```
+
+The training was perform with the folowing parameter:
+
+- optimizer: momentum optimizer
+- learning rate: Fine tuned consine decay learning rate
+- Data augmentation: 
+  - Brigthness
+  - Contrast
+  - Saturation
+  - Hue
+  - Black Patches
+#### Graphs
+TODO: add result graphs
+
+#### Conclusion
+
+The higher learning rate made the model to skip from a minimum to another one and this minimum seemed to be sub-optimal. The next interation will focus on increasing the number of steps.
+
+### Increase Steps Number experiment
+The previous experiment and documentation showed that the learning rate was already close to an optimum and then following one of our previous experiment conclusion we will here increse the number of steps by 500.
