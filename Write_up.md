@@ -26,6 +26,7 @@ The split are considered before data augmentation.
 As a reference experiment, the training was perform with the folowing parameter:
 
 - optimizer: momentum optimizer
+- steps: 2500
 - learning rate: consine decay learning rate
 - Data augmentation: Null
 
@@ -55,6 +56,7 @@ As the data set is quite small and fail to reflect some real life situation, dat
 The training was perform with the folowing parameter:
 
 - optimizer: momentum optimizer
+- steps: 2500
 - learning rate: consine decay learning rate
 - Data augmentation: 
   - Brigthness
@@ -108,6 +110,7 @@ As state in the following article the cosine decay rate is already a great learn
 The training was perform with the folowing parameter:
 
 - optimizer: momentum optimizer
+- steps: 2500
 - learning rate: Fine tuned consine decay learning rate
 - Data augmentation: 
   - Brigthness
@@ -116,7 +119,13 @@ The training was perform with the folowing parameter:
   - Hue
   - Black Patches
 #### Graphs
-TODO: add result graphs
+![alt text](./images/Exp_two_loss.PNG "Losses chart of the experience n°2") 
+
+Incsreasing the learning rate caused a shift from one minimum to another and caused the weights to shift to a sub-optimal minimum.
+
+![alt text](./images/Exp_two_learning_rate.PNG "Learning rates chart of the experience n°2") 
+
+This simply display the learning rates.
 
 #### Conclusion
 
@@ -124,3 +133,17 @@ The higher learning rate made the model to skip from a minimum to another one an
 
 ### Increase Steps Number experiment
 The previous experiment and documentation showed that the learning rate was already close to an optimum and then following one of our previous experiment conclusion we will here increse the number of steps by 500.
+
+The training was perform with the folowing parameter:
+
+- optimizer: momentum optimizer
+- steps: 3000
+- learning rate: Fine tuned consine decay learning rate
+- Data augmentation: 
+  - Brigthness
+  - Contrast
+  - Saturation
+  - Hue
+  - Black Patches
+
+# Conclusion
