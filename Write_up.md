@@ -11,7 +11,7 @@ All the different steps to execute this project can be found inside the file REA
 ## Dataset analysis
 This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
 
-#TODO: add pictures
+TODO: add pictures 
 
 The dataset is composed by 1000 images from the waymo dataset. 
 The first noticable fact is the vehicle/bicycle/pedestrian distribution their is a lot of cars and trucks but only a few bycicles and pedestrians.
@@ -45,7 +45,31 @@ Analysis:
 ![alt text](./images/Init_exp_learning_rate.png "Learning of the Reference experiment") 
 
 ### Conclusion
+This experiment 
 The next experiments will focus on data augmentation and learning rate.
 
 ## Improve on the reference
 ### Data Augmentation
+As the data set is quite small and fail to reflect some real life situation, data augmentation is used to improve the size and variety of the data set.
+
+The training was perform with the folowing parameter:
+
+- optimizer: momentum optimizer
+- learning rate: consine decay learning rate
+- Data augmentation: 
+  - Brigthness
+  - Contrast
+  - Saturation
+  - Hue
+  - Black Patches
+  
+  
+#### Image example
+TODO: Add example of data augmentation
+
+#### Graphs
+
+TODO: Add Data Augmentation loss
+
+### Learning Rate
+
