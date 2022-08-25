@@ -82,6 +82,8 @@ The regularization loss show us that we still don't have any overfit with our mo
 
 Augmenting the volume and variety of data has greatly improve the training of our model by reducing the loss. Therefore it is still possible to improve the performances of the model. Two leads are the number of steps and the learning rate.
 
+### Exponential Learning Rate Fine Tunning
+
 ### Learning Rate Fine Tunning
 As state in the following article the cosine decay rate is already a great learning rate for the object detection [Article](https://neptune.ai/blog/tensorflow-object-detection-api-best-practices-to-training-evaluation-deployment). So Instead of providing a new learning rate, the experiment will be with the same learning rate but with a different set of parameters.
 
@@ -145,5 +147,6 @@ The training was perform with the folowing parameter:
   - Saturation
   - Hue
   - Black Patches
-
+#### Conclusion
+The workspace is lacking memory for excecuting this experiment.
 # Conclusion
