@@ -4,7 +4,7 @@ The objection detection module of a self driving vehicle is such an important mo
 This way a vehicle can detect obstacle to avoid.
 
 # Set up
-To execute this training the provided workspace was used. 
+To execute this training, the provided workspace was used. 
 All the different steps to execute this project can be found inside the file README.md
 
 # Dataset
@@ -125,7 +125,7 @@ The learning rate is shown on the following graph.
 ![alt text](./images/Exp_3_learning_rate.PNG "learning rate chart of the experience n°3") 
 
 The idea was to get a higher learning rate with this model in order to improve the model.
-The Loss charts show if we analyse the loss graph we can see that the the model keeps learning. Increasing the number of steps could be a great way to improve this model.
+If we analyse the loss graph we can see that the model keeps learning. Increasing the number of steps could be a great way to improve this model.
 
 ![alt text](./images/Exp_3_loss.PNG "Losses chart of the experience n°3") 
 
